@@ -1,0 +1,77 @@
+
+select,input,textarea{
+  background-color: #fff4ed !important;
+}
+.home-h{
+  margin-left: 45%;
+}
+
+.form-control:focus {
+    box-shadow: none;
+  }
+  .header .search-bar {
+    width: 90%;
+    background-color: #fff4ed;
+  }
+  .header .form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  .header .form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+  }
+  .header .btn-filter{
+    background-color: #EB762A;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  .header .btn-filter i{
+    color: #fff;
+  }
+
+  .last-update .card-body .col-1{
+    margin-left: 10%;
+  }
+
+  .last-update .card-body i{
+    color: #EB762A; 
+  }
+
+  .post-item{
+    width: 80%;
+    margin-left: 10%;
+    background-color: #fff4ed ;
+  }
+  .post-form .post-item img{
+    width: 6%; 
+  }
+
+  .post-form button{
+    background-color: #EB762A;
+    color: #fff;
+    width: 15%;
+    margin-left:42% !important;
+  }
+
+
+  /* my blood post  */
+  
+  .top-header i.fa-arrow-left-long{
+    color:  #EB762A;
+  }
+
+  .see_more{
+    text-align: right;
+  }
+.see_more button{
+  color:#EB762A;
+  text-decoration: none;
+}
+.see_more p{
+  text-align: justify;
+}
