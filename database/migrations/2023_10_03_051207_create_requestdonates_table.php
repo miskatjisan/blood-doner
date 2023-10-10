@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('blood_group');
+            $table->string('area');
             $table->string('request_name');
             $table->string('request_phone');
-            $table->string('request_details');
+            $table->text('request_details');
             $table->timestamps();
         });
     }

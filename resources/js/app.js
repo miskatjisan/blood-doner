@@ -1,8 +1,12 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import Router from './router/index.js';
-import App from './App.vue'; // Import the root component
+import App from './App.vue'; 
+import axios from 'axios';
 
-const app = createApp(App); // Use the root component
+axios.defaults.baseURL = 'http://127.0.0.1:8000';
+
+const app = createApp(App);
 app.use(Router);
+app.config.globalProperties.$axios = axios;
 app.mount('#app');

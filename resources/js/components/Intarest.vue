@@ -1,176 +1,213 @@
 <template>
-    <div class="container">
-      <!-- top nav bar -->
-      <nav class="navbar top-header mt-3">
-  <router-link :to="{name:'home'}" class="link-light rounded"><i class="fa-solid fa-arrow-left-long"></i></router-link><h3 class="text-center">My Blood Post</h3><i class="fa-solid fa-circle-user fs-2"></i> 
-</nav> 
-  <!-- top nav bar -->
+  <div class="app" :style="{ backgroundImage: 'url(\'/body-bg.jpg\')' }">
+    <div class="blurry-bg d-flex justify-content-center align-items-center h-100 w-100">
+      <div class="app-body">
+        <div class="scroll-body">
+          <div class="container">
+            <!-- Top Nav Bar -->
+            <nav class="navbar d-flex justify-content-between mt-3">
+              <router-link :to="{ name: 'home' }" class="link-light rounded">
+                ⬅️
+                <!-- <img class="h-25p w-25p" :src="getBackImage()" alt="back image" /> -->
+              </router-link>
+              <h3 class="text-center dark-color">Interested</h3>
+              <i class="fa-solid fa-circle-user fs-2"></i>
+            </nav>
+            <!-- End Top Nav Bar -->
 
+            <!-- Navbar -->
+            <nav class="navbar header mt-3 mb-4">
+              <div class="w-100 d-flex justify-content-between align-items-center">
+                <form class="w-100">
+                  <div class="input-group position-relative">
+                    <button id="button-addon2" type="submit" class="btn btn-link text-theme position-absolute fs-18 top-50pr left-7 z-index-9">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <input type="search" id="blood_group" placeholder="Search" aria-describedby="button-addon2" class="py-3 ps-5 pe-3 form-control w-100 rounded-pill inset-shadow bg-theme-light input-focus" />
+                  </div>
+                </form>
+                <button type="button" class="btn btn-filter rounded-circle h-50p w-50p d-flex justify-content-center align-items-center theme-hover ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                  <i class="fa-solid fa-sliders fs-20"></i>
+                </button>
+              </div>
+            </nav>
+            <!-- End Navbar -->
 
-        <div class="card-body shadow text-center myposts p-2 mt-5">
-  <div class="row">
-    <div class="col-6">
-      <h3>Md Mizanur Rahman</h3>
-    </div>
-    <div class="col-6">
-      <button class="p-3 btn border-0 rounded rounded-pill shadow fs-5" style="background-color: #EB762A;color:#fff;">Intarested</button>
-    </div>
-    <div class="col-6 text-center">
-        <div style="display: inline-table;">
-          <img :src="getPhoneImage()" alt="blood">
+            <!-- User Details -->
+            <div class="bg-white rounded-4 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="fs-20 dark-color">Mizanur Rahman</h2>
+                <button class="border-0 bg-theme rounded py-1 px-3 fs-14 text-white shadow-h">
+                  Interested
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0">
+                  <div class="d-flex align-items-center fs-14 mb-2">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> 01700-000000 </span>
+                  </div>
+                  <div class="d-flex align-items-center fs-14">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> Dhanmondi, Dhaka, 1205 </span>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 text-end">
+                  <img class="w-50p h-50p" :src="getManImage()" alt="User Image">
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-4 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="fs-20 dark-color">Mizanur Rahman</h2>
+                <button class="border-0 bg-theme rounded py-1 px-3 fs-14 text-white shadow-h">
+                  Interested
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0">
+                  <div class="d-flex align-items-center fs-14 mb-2">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> 01700-000000 </span>
+                  </div>
+                  <div class="d-flex align-items-center fs-14">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> Dhanmondi, Dhaka, 1205 </span>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 text-end">
+                  <img class="w-50p h-50p" :src="getManImage()" alt="User Image">
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-4 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="fs-20 dark-color">Mizanur Rahman</h2>
+                <button class="border-0 bg-theme rounded py-1 px-3 fs-14 text-white shadow-h">
+                  Interested
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0">
+                  <div class="d-flex align-items-center fs-14 mb-2">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> 01700-000000 </span>
+                  </div>
+                  <div class="d-flex align-items-center fs-14">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> Dhanmondi, Dhaka, 1205 </span>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 text-end">
+                  <img class="w-50p h-50p" :src="getManImage()" alt="User Image">
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-4 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="fs-20 dark-color">Mizanur Rahman</h2>
+                <button class="border-0 bg-theme rounded py-1 px-3 fs-14 text-white shadow-h">
+                  Interested
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0">
+                  <div class="d-flex align-items-center fs-14 mb-2">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> 01700-000000 </span>
+                  </div>
+                  <div class="d-flex align-items-center fs-14">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> Dhanmondi, Dhaka, 1205 </span>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 text-end">
+                  <img class="w-50p h-50p" :src="getManImage()" alt="User Image">
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-4 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="fs-20 dark-color">Mizanur Rahman</h2>
+                <button class="border-0 bg-theme rounded py-1 px-3 fs-14 text-white shadow-h">
+                  Interested
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0">
+                  <div class="d-flex align-items-center fs-14 mb-2">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> 01700-000000 </span>
+                  </div>
+                  <div class="d-flex align-items-center fs-14">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> Dhanmondi, Dhaka, 1205 </span>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 text-end">
+                  <img class="w-50p h-50p" :src="getManImage()" alt="User Image">
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-4 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="fs-20 dark-color">Mizanur Rahman</h2>
+                <button class="border-0 bg-theme rounded py-1 px-3 fs-14 text-white shadow-h">
+                  Interested
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0">
+                  <div class="d-flex align-items-center fs-14 mb-2">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> 01700-000000 </span>
+                  </div>
+                  <div class="d-flex align-items-center fs-14">
+                    <div class="h-25p w-25p rounded bg-theme-light text-theme fs-12 d-flex justify-content-center align-items-center">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="dark-color ml-2 fs-14 d-inline-block ms-2"> Dhanmondi, Dhaka, 1205 </span>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 text-end">
+                  <img class="w-50p h-50p" :src="getManImage()" alt="User Image">
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>01700-000000</h2>
-        </div>
-            <br>
-        <div style="display: inline-table;">
-          <img :src="getLocationImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>Dhanmondi, Dhaka, 1205</h2>
-        </div>
+      </div>
     </div>
-    <div class="col-6">
-        <img :src="getManImage()" alt="blood">
-    </div>
-
   </div>
-</div>
-
-<div class="card-body shadow text-center myposts p-2 mt-5">
-  <div class="row">
-    <div class="col-6">
-      <h3>Md Mizanur Rahman</h3>
-    </div>
-    <div class="col-6">
-      <button class="p-3 btn border-0 rounded rounded-pill shadow fs-5" style="background-color: #EB762A;color:#fff;">Intarested</button>
-    </div>
-    <div class="col-6 text-center">
-        <div style="display: inline-table;">
-          <img :src="getPhoneImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>01700-000000</h2>
-        </div>
-            <br>
-        <div style="display: inline-table;">
-          <img :src="getLocationImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>Dhanmondi, Dhaka, 1205</h2>
-        </div>
-    </div>
-    <div class="col-6">
-        <img :src="getManImage()" alt="blood">
-    </div>
-
-  </div>
-</div>
-
-<div class="card-body shadow text-center myposts p-2 mt-5">
-  <div class="row">
-    <div class="col-6">
-      <h3>Kurt Bates</h3>
-    </div>
-    <div class="col-6">
-      <button class="p-3 btn border-0 rounded rounded-pill shadow fs-5" style="background-color: #EB762A;color:#fff;">Intarested</button>
-    </div>
-    <div class="col-6 text-center">
-        <div style="display: inline-table;">
-          <img :src="getPhoneImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>01700-000000</h2>
-        </div>
-            <br>
-        <div style="display: inline-table;">
-          <img :src="getLocationImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>Dhanmondi, Dhaka, 1205</h2>
-        </div>
-    </div>
-    <div class="col-6">
-        <img :src="getManImage()" alt="blood">
-    </div>
-
-  </div>
-</div>
-
-
-<div class="card-body shadow text-center myposts p-2 mt-5">
-  <div class="row">
-    <div class="col-6">
-      <h3>Stephanie Nicol</h3>
-    </div>
-    <div class="col-6">
-      <button class="p-3 btn border-0 rounded rounded-pill shadow fs-5" style="background-color: #EB762A;color:#fff;">Intarested</button>
-    </div>
-    <div class="col-6 text-center">
-        <div style="display: inline-table;">
-          <img :src="getPhoneImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>01700-000000</h2>
-        </div>
-            <br>
-        <div style="display: inline-table;">
-          <img :src="getLocationImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>Dhanmondi, Dhaka, 1205</h2>
-        </div>
-    </div>
-    <div class="col-6">
-        <img :src="getManImage()" alt="blood">
-    </div>
-
-  </div>
-</div>
-
-
-<div class="card-body shadow text-center myposts p-2 mt-5">
-  <div class="row">
-    <div class="col-6">
-      <h3>Daniel Hamilton</h3>
-    </div>
-    <div class="col-6">
-      <button class="p-3 btn border-0 rounded rounded-pill shadow fs-5" style="background-color: #EB762A;color:#fff;">Intarested</button>
-    </div>
-    <div class="col-6 text-center">
-        <div style="display: inline-table;">
-          <img :src="getPhoneImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>01700-000000</h2>
-        </div>
-            <br>
-        <div style="display: inline-table;">
-          <img :src="getLocationImage()" alt="blood">
-        </div>
-
-        <div style="display: inline-table;margin-left: 7%; ">
-          <h2>Dhanmondi, Dhaka, 1205</h2>
-        </div>
-    </div>
-    <div class="col-6">
-        <img :src="getManImage()" alt="blood">
-    </div>
-
-  </div>
-</div>
-
-
-    </div>
 </template>
 
 <script>

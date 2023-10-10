@@ -6,8 +6,20 @@ const SearchResults = () => import('../components/SearchResults.vue');
 const RequestDonate = () => import('../components/RequestDonate.vue');
 const BloodRequest = () => import('../components/BloodRequest.vue');
 const Intarest = () => import('../components/Intarest.vue');
+import Register from '../components/Register.vue';
+import Login from '../components/Login.vue';
 
 const routes = [
+
+    {
+         path: '/register', 
+         component: Register 
+    },
+
+    { 
+        path: '/login', 
+        component: Login 
+    },
 
     {
         name: "home",

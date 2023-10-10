@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Requestdonate extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','blood_group','request_name','request_phone','request_details'];
+    protected $fillable = ['name','blood_group','area','request_name','request_phone','request_details'];
 }
